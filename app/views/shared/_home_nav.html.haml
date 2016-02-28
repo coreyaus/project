@@ -1,0 +1,23 @@
+%nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
+        %i.fa.fa-bars
+      %a.navbar-brand.page-scroll{:href => "/"}
+        /link was #page-top
+        %i.fa.fa-star
+        %span.light Code
+        Nation
+    .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+      %ul.nav.navbar-nav
+        / Hidden li included to remove active class from about link when scrolled up past about section
+        %li.hidden
+          %a{:href => "#page-top"}
+        %li
+          %a.page-scroll{:href => "#about"} About
+        %li
+          %a.page-scroll{:href => "#store"} Store
+        %li
+          %a.page-scroll{:href => "#contact"} Contact
+        %li.hidden
+          %a{:href => "#footer"}
