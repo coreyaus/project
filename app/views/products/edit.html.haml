@@ -1,0 +1,12 @@
+%section.container.content-section.text-center
+	.row
+		.col-lg-8.col-lg-offset-2
+			%h1 Editing product
+
+			= render 'form'
+
+			%br
+
+			= link_to 'Back', products_path, {:class => "btn"}
+
+			/= link_to 'Show', @product, {:class => "btn"}
