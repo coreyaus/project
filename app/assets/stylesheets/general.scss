@@ -271,6 +271,18 @@ img::-moz-selection {
   &#contact {
     background-image: url(contact-header-bg.jpg);
   }
+  // Give all headers other than the homepage a random background image with a semi-transparent tint
+  &.half-height {
+    position: relative;
+    background-image: url('https://source.unsplash.com/category/nature/1600x900');
+    //background-image: url('https://source.unsplash.com/2PFsijM7PgI/1600x900');
+    .tint {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+    }
+  }
 }
 
 p.intro-text span {
