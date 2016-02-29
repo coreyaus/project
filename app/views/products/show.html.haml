@@ -1,0 +1,12 @@
+%section.container.content-section.text-center
+	.row
+		.col-lg-10.col-lg-offset-1
+			%p#notice= notice
+			%h1.margin0.padbottom25= @product.name
+			%img.padbottom25{:src => @product.image_url}
+			%p.margin0.padbottom25= @product.description
+			%p.margin0.padbottom25
+				= link_to 'Edit', edit_product_path(@product), {:class => "btn btn-default btn-sm"}
+				= link_to 'Destroy', @product, :class => "btn btn-default btn-sm", :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+			= link_to 'See all products', products_path, {:class => "btn btn-default btn-lg"}
