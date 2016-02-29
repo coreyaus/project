@@ -4,9 +4,4 @@
     .container
       .row
         .col-md-8.col-md-offset-2
-          - if current_page?(static_pages_about_path)
-            %h1.brand-heading About
-          - elsif current_page?(static_pages_contact_path)
-            %h1.brand-heading Contact
-          - else
-            %h1.brand-heading Our products
+          %h1.brand-heading= headline

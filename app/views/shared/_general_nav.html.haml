@@ -11,31 +11,11 @@
     .collapse.navbar-collapse.navbar-right.navbar-main-collapse
       %ul.nav.navbar-nav
 
-        - if current_page?(root_path) or current_page?(static_pages_index_path)
-          %li.active
-            %a{:href => "/"} Home
+        - if current_page?(static_pages_index_path)
+          =nav_link('Home', static_pages_index_path)
         - else
-          %li
-            %a{:href => "/"} Home
-
-        - if current_page?(static_pages_about_path)
-          %li.active
-            %a{:href => "/static_pages/about"} About
-        - else
-          %li
-            %a{:href => "/static_pages/about"} About
-
-        - if current_page?(products_path)
-          %li.active
-            %a{:href => "/products"} Store
-        - else
-          %li
-            %a{:href => "/products"} Store
-
-        - if current_page?(static_pages_contact_path)
-          %li.active
-            %a{:href => "/static_pages/contact"} Contact
-        - else
-          %li
-            %a{:href => "/static_pages/contact"} Contact
+          =nav_link('Home', root_path)
+        =nav_link 'About', static_pages_about_path
+        =nav_link 'Store', products_path
+        =nav_link 'Contact', static_pages_contact_path
 

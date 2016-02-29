@@ -13,6 +13,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml'
 gem 'haml-rails', '~> 0.9.0'
 
+# a tool to add "active" class to links if user is already on that page
+# gem 'nav_lynx', '~> 1.1', '>= 1.1.1'
+
 gem 'font-awesome-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

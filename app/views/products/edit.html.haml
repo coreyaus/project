@@ -1,7 +1,12 @@
+/ = render 'shared/general_header', headline: 'Edit Product'
 %section.container.content-section.text-center
 	.row
-		.col-lg-8.col-lg-offset-2
-			%h1 Editing product
+		.col-sm-8.col-sm-offset-2
+			%p#notice= notice
+			%h1.margin0.padbottom25
+				Edit
+				= @product.name
+			%img.padbottom25{:src => @product.image_url}
 
 			= render 'form'
 

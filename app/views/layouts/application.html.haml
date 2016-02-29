@@ -18,11 +18,6 @@
 
     = render 'shared/general_nav'
 
-    - if current_page?(root_path) or current_page?(static_pages_index_path)
-      = render 'shared/home_header'
-    - else
-      = render 'shared/general_header'
-
     = yield
 
     = render 'shared/footer'
