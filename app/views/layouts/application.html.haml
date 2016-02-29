@@ -16,23 +16,14 @@
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
   %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
 
-    - if current_page?(root_path) or current_page?(static_pages_index_path)
-      = render 'shared/home_nav'
-    - else
-      = render 'shared/general_nav'
+    = render 'shared/general_nav'
 
     - if current_page?(root_path) or current_page?(static_pages_index_path)
       = render 'shared/home_header'
     - else
       = render 'shared/general_header'
 
-    - if current_page?(root_path) or current_page?(static_pages_index_path)
-      = render :template => "static_pages/about"
-
     = yield
-
-    - if current_page?(root_path) or current_page?(static_pages_index_path)
-      = render :template => "static_pages/contact"
 
     #map
     = render 'shared/footer'
