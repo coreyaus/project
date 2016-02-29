@@ -7,13 +7,13 @@
           %li= msg
 
   .form-group
-    = f.label :name, {:class => "control-label sr-only"}
+    = f.label :name, {:class => "control-label show text-left"}
     = f.text_field :name, {:class => "form-control", :placeholder => :name}
   .form-group
-    = f.label :description, {:class => "control-label sr-only"}
+    = f.label :description, {:class => "control-label show text-left"}
     = f.text_area :description, {:class => "form-control", :placeholder => :description}
   .form-group
-    = f.label :image_url, {:class => "control-label sr-only"}
+    = f.label :image_url, {:class => "control-label show text-left"}
     = f.text_field :image_url, {:class => "form-control", :placeholder => :image_url}
   .actions
     = f.submit 'Save', {:class => "btn btn-default btn-lg"}
