@@ -10,9 +10,12 @@
 			%p
 				Stay tuned - I'm very much looking forward to (finally) making this happen!
 			%p
-				This site is based on 
-				%a{:href => 'http://startbootstrap.com/template-overviews/grayscale/'}Grayscale
-				\. It uses photos by
-				%a{:href => 'https://unsplash.com/'}UnSplash
-				, and a custom Google Maps skin taken from
-				%a{:href => "http://snazzymaps.com/"}Snazzy Maps
+				This site is based on the StartBootstrap template called
+				= succeed "." do
+					%a{:href => "http://startbootstrap.com/template-overviews/grayscale/"} Grayscale
+				It uses photos by
+				= succeed "," do
+					%a{:href => "https://unsplash.com/"} UnSplash
+				and a custom Google Maps skin taken from
+				= succeed "." do
+					%a{:href => "http://snazzymaps.com/"} Snazzy Maps

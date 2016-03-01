@@ -10,8 +10,14 @@
     = f.label :name, {:class => "control-label show text-left"}
     = f.text_field :name, {:class => "form-control", :placeholder => :name}
   .form-group
+    = f.label :price, {:class => "control-label show text-left"}
+    = f.text_field :price, {:class => "form-control", :placeholder => :price}
+  .form-group
     = f.label :description, {:class => "control-label show text-left"}
     = f.text_area :description, {:class => "form-control", :placeholder => :description}
+  .form-group
+    = f.label :colour, {:class => "control-label show text-left"}
+    = f.text_field :colour, {:class => "form-control", :placeholder => :colour}
   .form-group
     = f.label :image_url, {:class => "control-label show text-left"}
     = f.text_field :image_url, {:class => "form-control", :placeholder => :image_url}
