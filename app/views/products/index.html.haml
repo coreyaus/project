@@ -4,22 +4,6 @@
     .col-lg-10.col-lg-offset-1
       / %h1.padbottom Listing products
       .row
-        - @products.each do |product|
-          .col-md-5.padbottommore{:class => cycle('col-md-offset-1','')}
-            %h3.margin0.padbottom
-              = link_to product.name, product
-            %a{:href => product_path(product)}
-              %div.padbottommore
-                #{image_tag(product.image_url)}
-            %h3.margin0.padbottom
-              #{number_to_currency(product.price)}
-            %p.margin0.product-description.padbottom
-              #{product.description}
-            %p.margin0.padbottom
-              %em Available in #{product.colour}
-            %p.padbottom
-              = link_to 'Show', product, {:class => "btn btn-default btn-sm"}
-              = link_to 'Edit', edit_product_path(product), {:class => "btn btn-default btn-sm"}
-              = link_to 'Destroy', product, :class => "btn btn-default btn-sm", :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = render @products
 
       = link_to 'New Product', new_product_path, {:class => "btn btn-default btn-lg"}
