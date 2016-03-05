@@ -1,10 +1,10 @@
 #featured-product-carousel.carousel.slide{"data-ride" => "carousel"}
 	%ol.carousel-indicators
 		- products.each.with_index do |product, index|
-			%li{:class => product == products.first ? "active" : nil, "data-slide-to" => index, "data-target" => "#featured-product-carousel"}
+			%li{:class => index.zero? && "active", "data-slide-to" => index, "data-target" => "#featured-product-carousel"}
 	.carousel-inner{:role => "listbox"}
-		- products.each do |product|
-			.item{:class => product == products.first ? "active" : nil}
+		- products.each.with_index do |product, index|
+			.item{:class => index.zero? && "active"}
 				%a{:href => product_path(product)}
 					%img{:alt => product.name, :src => product.image_url}
 					.carousel-caption
