@@ -11,10 +11,7 @@
     .collapse.navbar-collapse.navbar-right.navbar-main-collapse
       %ul.nav.navbar-nav
 
-        - if current_page?(index_path)
-          =nav_link 'Home', index_path
-        - else
-          =nav_link 'Home', root_path
+        =nav_link 'Home', root_path
         =nav_link 'About', about_path
         =nav_link 'Store', products_path
         =nav_link 'Contact', contact_path

@@ -28,7 +28,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to new_product_path, notice: 'Product was successfully created.' }
+        # temporarily redirecting to new_product_path instead of @product, which is the standard (the "show" view for the newly created product)
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
