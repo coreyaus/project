@@ -37,8 +37,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to new_product_path, notice: 'Product was successfully created.' }
-        # temporarily redirecting to new_product_path instead of @product, which is the standard (the "show" view for the newly created product)
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -79,6 +78,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :colour, :price, :image_url)
+      params.require(:product).permit(:name, :description, :colour, :price, :image_url, :featured)
     end
 end

@@ -1,25 +1,27 @@
 = render 'shared/home_header'
 
-/
-	- if @featured_product
-		%section#featured_product.container.content-section.text-center
-			.padtop100
-				.row
-					.col-md-6.col-md-offset-3
-						%h2
+- if @featured_product
+	%section#featured_product.container.content-section.text-center
+		.padtop100
+			.row.padbottommore
+				.col-md-6.col-md-offset-3.padbottommore
+					%h2
 						= link_to @featured_product.name, @featured_product
-						%a{:href => product_path(@featured_product)}
-							%div.padbottommore
-								#{image_tag(@featured_product.image_url)}
-						%h3.margin0.padbottom
-							#{number_to_currency(@featured_product.price)}
-						%p.margin0.product-description.padbottom
-							#{@featured_product.description}
-						%p.margin0.padbottom
-							%em Available in #{@featured_product.colour}
+					%a{:href => product_path(@featured_product)}
+						%div.padbottommore.featured-image
+							= image_tag(@featured_product.image_url, class:"")
+							#ribbon-container
+								%span FEATURED
+					%h3.margin0.padbottom
+						#{number_to_currency(@featured_product.price)}
+					%p.margin0.product-description.padbottom
+						#{@featured_product.description}
+					%p.margin0.padbottom
+						%em Available in #{@featured_product.colour}
 
-- if @products
-	= render partial: "shared/product_carousel", locals: {products: @products}
+/
+	- if @products
+		= render partial: "shared/product_carousel", locals: {products: @products}
 
 %section#store.content-section.text-center
 	.store-section

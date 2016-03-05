@@ -21,5 +21,10 @@
   .form-group
     = f.label :image_url, {:class => "control-label show text-left"}
     = f.text_field :image_url, {:class => "form-control", :placeholder => :image_url}
+  .checkbox.form-group.padbottom
+    = f.label :featured, {:class => "control-label show text-left"} do
+      = f.check_box :featured
+      Would you like to feature this product on the homepage?
   .actions
     = f.submit 'Save', {:class => "btn btn-default btn-lg"}
+
