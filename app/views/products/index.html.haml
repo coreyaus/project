@@ -1,9 +1,18 @@
 = render 'shared/general_header', headline: 'Our Products'
 %section.container.content-section.text-center
-  .row
-    .col-lg-10.col-lg-offset-1
-      / %h1.padbottom Listing products
-      .row
-        = render @products
+	.row
+		.col-lg-10.col-lg-offset-1
+			.row
+				-if @products
+					= render @products
 
-      = link_to 'New Product', new_product_path, {:class => "btn btn-default btn-lg"}
+				-if @products.empty? and params[:q]
+					.col-sm-8.col-sm-offset-2.padbottommore
+						%h3.padbottommore
+							No products match your search term "#{params[:q]}". Please try a different query or
+							=link_to "return to the full listing", products_path
+				-elsif @products.empty?
+					.col-sm-8.col-sm-offset-2.padbottommore
+						%h3 There are currently no products available in this store. Please check back later to get a bargain!
+
+			= link_to 'New Product', new_product_path, {:class => "btn btn-default btn-lg"}

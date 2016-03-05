@@ -208,26 +208,26 @@ a {
   }
 }
 
-/*::-moz-selection {
+::-moz-selection {
   text-shadow: none;
-  background: #fcfcfc;
-  background: rgba(white, 0.2);
+  background: darken($primary,18);
+  color: #fff;
+  //background: rgba(white, 0.2);
 }
-
 ::selection {
   text-shadow: none;
-  background: #fcfcfc;
-  background: rgba(white, 0.2);
+  background: darken($primary,18);
+  color: #fff;
+  //background: rgba(white, 0.2);
 }
-
 img::selection {
-  background: transparent;
+  background: darken($primary,18);
+  color: #fff;
 }
-
 img::-moz-selection {
-  background: transparent;
-}*/
-
+  background: darken($primary,18);
+  color: #fff;
+}
 
 .intro {
   display: table;
