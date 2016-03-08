@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
 
+  post 'thanks' => 'static_pages#thanks'
+
   get 'static_pages/landing_page' => redirect("/")
 
   root 'static_pages#landing_page'
