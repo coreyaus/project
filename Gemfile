@@ -33,6 +33,8 @@ gem 'turbolinks'
 # Make turbolinks play nice with jQuery - run my sitewide JS on every page change
 gem 'jquery-turbolinks'
 
+gem 'devise'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -52,6 +54,7 @@ group :development, :test do
 	gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem "erb2haml"
 end
 
 group :development do
