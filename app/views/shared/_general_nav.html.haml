@@ -16,6 +16,13 @@
         =nav_link 'Store', products_path
         =nav_link 'Contact', contact_path
 
+      %ul.nav.navbar-nav.pull-right
+        %li
+          - if user_signed_in?
+            = link_to('Logout', destroy_user_session_path, :method => :delete)
+          - else
+            = link_to('Login', new_user_session_path)
+
       = form_tag("/products", method: "get", role: "search", class:"navbar-form navbar-right") do
         .input-group
           = label_tag(:q, "Search", class: "sr-only")

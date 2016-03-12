@@ -3,6 +3,10 @@
     .container
       .row
         .col-md-8.col-md-offset-2
+          - if notice
+            %p.notice.padtopmore.padbottomless= notice
+          - if alert
+            %p.alert.padtopmore.padbottomless= alert
           %h1.brand-heading My First App
           %p.intro-text
             Creating digital tools for progressive campaigns
