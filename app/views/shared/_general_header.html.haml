@@ -6,6 +6,6 @@
         .col-md-8.col-md-offset-2
           %h1.brand-heading= headline
           - if notice
-            %p.notice.padtopmore.padbottomless= notice
+            %p.alert.alert-info.notice= notice
           - if alert
-            %p.alert.padtopmore.padbottomless= alert
+            %p.alert.alert-warning= alert
