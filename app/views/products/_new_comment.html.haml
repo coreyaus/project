@@ -1,0 +1,15 @@
+- if signed_in?
+  %hr
+  %h3.margin0.padtop25.padbottom Add a review
+  = form_for([@product, @product.comments.build]) do |f|
+    .form-group
+      .rating.text-left
+    /
+      .form-group
+        = f.label :rating, class: "control-label show text-left"
+        = f.text_field :rating, class: "rating form-control", :placeholder => :rating
+    .form-group
+      = f.label :body, "Comment", :class => "control-label show text-left"
+      = f.text_area :body, :class => "form-control", :placeholder => "Please let us know your thoughts"
+    .actions
+      = f.submit "Submit", :class => "btn btn-default btn-lg"

@@ -9,6 +9,8 @@
 					#{image_tag(@product.image_url)}
 				%h3.margin0.padbottommore
 					Price: #{number_to_currency(@product.price)}
+				.padbottommore
+					.rated{"data-score" => @product.average_rating}
 				%p.margin0.padbottommore #{@product.description}
 				%p.margin0.padbottom20
 					%em Available in #{@product.colour}
@@ -17,3 +19,8 @@
 					= link_to 'Destroy', @product, :class => "btn btn-default btn-sm", :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 				= link_to 'See all products', products_path, {:class => "btn btn-default btn-lg"}
+
+				.padtop25
+					= render 'new_comment'
+				.padtop25
+					= render 'comments'
