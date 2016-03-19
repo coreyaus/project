@@ -9,8 +9,9 @@
 					#{image_tag(@product.image_url)}
 				%h3.margin0.padbottommore
 					Price: #{number_to_currency(@product.price)}
-				.padbottommore
-					.rated{"data-score" => @product.average_rating}
+				- if @product.comments.size > 2
+					.padbottommore
+						.rated{"data-score" => @product.average_rating}
 				%p.margin0.padbottommore #{@product.description}
 				%p.margin0.padbottom20
 					%em Available in #{@product.colour}
