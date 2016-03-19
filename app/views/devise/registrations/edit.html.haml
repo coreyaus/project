@@ -29,13 +29,15 @@
                 %i (use your current password to confirm changes)
               %br/
               = f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current Password"
-            .padtopmore
-              = f.submit "Update"
+            .padbottom20
+              = f.submit "Update", class: "btn btn-default"
 
-          %h4.padtopmore Cancel my account
-          %p
-            Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+          /
+            .padtopmore.padbottom
+              %h4.margin0.padtop20.padbottom
+                Account no longer needed?
+              #{button_to "Delete my account", registration_path(resource_name), class:"btn btn-default btn-sm", data: { confirm: "Are you sure?" }, method: :delete}
 
-          .padtopmore
+          .padtop20
             = link_to "Back", :back
 

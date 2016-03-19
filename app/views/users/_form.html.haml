@@ -5,12 +5,12 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
+  .form-group
+    = f.label :first_name, {:class => "control-label show text-left"}
+    = f.text_field :first_name, {:class => "form-control", :placeholder => :first_name}
+  .form-group
+    = f.label :last_name, {:class => "control-label show text-left"}
+    = f.text_field :last_name, {:class => "form-control", :placeholder => :last_name}
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', {:class => "btn btn-default btn-lg"}
+
