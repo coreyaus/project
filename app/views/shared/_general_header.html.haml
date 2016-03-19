@@ -6,6 +6,10 @@
         .col-md-8.col-md-offset-2
           %h1.brand-heading= headline
           - if notice
-            %p.alert.alert-info.notice= notice
+            %p.alert.alert-info.notice
+              = notice
+              %span.pull-right.flash-close.glyphicon.glyphicon-remove{"aria-hidden":"true"}
           - if alert
-            %p.alert.alert-warning= alert
+            %p.alert.alert-warning
+              = alert
+              %span.pull-right.flash-close.glyphicon.glyphicon-remove{"aria-hidden":"true"}
