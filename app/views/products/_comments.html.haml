@@ -10,3 +10,5 @@
 				%p.margin0.padtopless= comment.body
 		- unless comment == @comments.last
 			%hr
+	.padtopmore
+		= will_paginate @comments, previous_label: '<i class="fa fa-chevron-left"></i> &nbsp', next_label: '&nbsp <i class="fa fa-chevron-right"></i>'
