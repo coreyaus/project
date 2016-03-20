@@ -9,6 +9,10 @@ class Ability
 
 		can :create, Order
 		can :read, Order, user_id: user.id
+
+		can :destroy, Comment, admin: true
+    can [:read, :create], Comment
+
   end
 
 end
