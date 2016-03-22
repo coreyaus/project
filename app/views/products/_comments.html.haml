@@ -1,0 +1,16 @@
+.product-reviews
+	- @comments.each do |comment|
+		.row.padtopless.padbottommore.text-left
+			.col-md-12
+				%p.margin0.padtopless
+					= comment.user.first_name
+					%small
+						%em &nbsp; (#{time_ago_in_words(comment.created_at)} ago)
+					- if signed_in? && current_user.admin?
+						= link_to ('&nbsp; <small><span class="glyphicon glyphicon-trash"></span></small>').html_safe, product_comment_path(@product, comment), method: :delete, data: { confirm: 'Are you sure?' }
+				.rated.padtopless{"data-score" => comment.rating}
+				%p.margin0.padtopless= comment.body
+		- unless comment == @comments.last
+			%hr
+	.padtopmore
+		= will_paginate @comments, previous_label: '<i class="fa fa-chevron-left"></i> &nbsp', next_label: '&nbsp <i class="fa fa-chevron-right"></i>'
