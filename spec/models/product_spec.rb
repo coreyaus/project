@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-describe Product do
+describe Product, type: :model do
+# the type: :model isn't strictly necessary in this case
 
 	context "when the product has comments" do
 		before do
