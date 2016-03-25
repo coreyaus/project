@@ -11,7 +11,7 @@ class Ability
     can :read, Order, user_id: user.id
 
     if user.admin?
-      can :destroy, Comment
+      can :manage, Comment
     end
     can [:read, :create], Comment
 
