@@ -1,10 +1,13 @@
 require 'rails_helper'
 
-describe UsersController, :type => :controller do
+describe UsersController, type: :controller do
 
   before do
-    @user = User.create!(email: "test@example.com", password: "543twoone")
-    @another_user = User.create!(email: "test2@example.com", password: "543twoone")
+    #@user = User.create!(email: "test@example.com", password: "543twoone")
+    @user = FactoryGirl.create(:user)
+    #@another_user = User.create!(email: "test2@example.com", password: "543twoone")
+    @another_user = FactoryGirl.create(:user)
+    # this uses a separate email address thanks to the sequence defined in my user_factory.rb
   end
 
   describe "GET #show" do
