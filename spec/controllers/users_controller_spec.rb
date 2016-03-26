@@ -21,6 +21,12 @@ describe UsersController, type: :controller do
         expect(response).to have_http_status(200)
         expect(assigns(:user)).to eq @user
       end
+      it "redirects to login if user tries to access another user's show page" do
+        get :show, id: @another_user.id
+        expect(response).to_not be_success
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_path)
+      end
     end
     context "No user is logged in" do
       it "redirects to login" do
@@ -28,17 +34,6 @@ describe UsersController, type: :controller do
         expect(response).to_not be_success
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(new_user_session_path)
-      end
-    end
-    context "logged in user tries to access another user's show page" do
-      before do
-        sign_in @user
-      end
-      it "redirects to login" do
-        get :show, id: @another_user.id
-        expect(response).to_not be_success
-        expect(response).to have_http_status(302)
-        expect(response).to redirect_to(root_path)
       end
     end
   end
