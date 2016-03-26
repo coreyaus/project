@@ -5,7 +5,7 @@ describe Product, type: :model do
 
 	context "when the product has comments" do
 		before do
-		  @product = Product.create!(name: "Race bike")
+		  @product = FactoryGirl.create(:product)
 		  @user = User.create!(email: "test@example.com", password: "543twoone")
 		  @product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
 		  @product.comments.create!(rating: 2, user: @user, body: "Average bike!")
@@ -19,7 +19,12 @@ describe Product, type: :model do
 
 	context "when the product has no name" do
 		it "is not valid" do
-			expect(Product.new(description: "Nice bike")).not_to be_valid
+			expect(FactoryGirl.build(:product, name: "")).not_to be_valid
+		end
+	end
+	context "when the product has no price" do
+		it "is not valid" do
+			expect(FactoryGirl.build(:product, price: "")).not_to be_valid
 		end
 	end
 

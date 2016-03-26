@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320014238) do
+ActiveRecord::Schema.define(version: 20160326192518) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160320014238) do
     t.integer "user_id"
     t.integer "product_id"
     t.float   "total"
+    t.string  "stripe_id"
   end
 
   add_index "orders", ["product_id"], name: "index_orders_on_product_id"

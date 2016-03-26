@@ -1,0 +1,11 @@
+= render 'shared/general_header', headline: 'Success!'
+%section#contact.container.content-section.text-center
+	.row
+		.col-md-8.col-md-offset-2
+			%h3
+				Thanks for buying local and supporting our community! 
+				%br
+				%br
+				We have received your order and will mail out your new
+				=link_to @product.name, @product
+				as soon as possible.
