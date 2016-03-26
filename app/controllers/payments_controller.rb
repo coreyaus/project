@@ -29,12 +29,12 @@ class PaymentsController < ApplicationController
     #===
 	    # body = e.json_body
 	    # err = body[:error]
-	    # flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+	    # flash[:alert] = "Payment error: #{err[:message]}"
 	    # redirect_to @product
     #===
     # SAMPLE ERROR HANDLER FROM STRIPE DOCS
     #===
-		  flash[:error] = e.message
+	    flash[:alert] = "Payment error: #{e.message}"
 		  redirect_to @product
 	  end
 	end
