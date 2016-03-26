@@ -16,6 +16,9 @@ gem 'haml-rails', '~> 0.9.0'
 #Add authorisation
 gem 'cancancan'
 
+#Stripe to handle payments
+gem 'stripe'
+
 #Handle pagination
 gem 'will_paginate', '~> 3.0.6'
 
