@@ -66,6 +66,8 @@ group :development, :test do
   gem "erb2haml"
   gem "factory_girl_rails", "~> 4.0"
   gem 'rspec-rails', '~> 3.0'
+  # Brakeman detects security vulnerabilities in Ruby on Rails applications via static analysis.
+  gem 'brakeman', '~> 3.2', '>= 3.2.1'
 end
 
 group :development do
