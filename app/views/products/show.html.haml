@@ -13,7 +13,7 @@
 			.col-md-6.col-md-offset-3
 				%h1.margin0.padbottom25 #{@product.name}
 				%div.padbottom20
-					#{image_tag(@product.image_url)}
+					=image_tag(@product.image_url, class: "img-zoom", data_image_zoom: @product.image_url)
 				%h3.margin0.padbottommore
 					Price: #{number_to_currency(@product.price)}
 				- if @product.comments.size > 2
