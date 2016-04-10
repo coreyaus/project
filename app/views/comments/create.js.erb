@@ -1,0 +1,4 @@
+$("#new_comment").hide();
+$("#new_comment").prev('h3').text("Thank you for your review!");
+$('.product-reviews').prepend("<%= j render @comment %>");
+ratedInit();

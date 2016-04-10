@@ -1,7 +1,7 @@
 - if signed_in?
   %hr
   %h3.margin0.padtop25.padbottom Add a review
-  = form_for([@product, @product.comments.build]) do |f|
+  = form_for([@product, @product.comments.build], remote: true) do |f|
     .form-group
       .rating.text-left
     /
