@@ -13,6 +13,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml'
 gem 'haml-rails', '~> 0.9.0'
 
+gem 'angularjs-rails'
+
 #Add authorisation
 gem 'cancancan'
 

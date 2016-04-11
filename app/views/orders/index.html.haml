@@ -3,3 +3,32 @@
 		.row
 			.col-md-6.col-md-offset-3
 				%h2 Check out your orders
+				%div{"ng-controller" => "OrdersCtrl"}
+					%form.form-inline{"ng-submit" => "addOrder()"}
+						%strong Add order:
+						%input.form-control{:placeholder => "Total", :step => "0.01", :type => "number", "ng-model" => "newOrder.total"}
+						%select.form-control{"ng-model" => "newOrder.product_id"}
+							%option{:disabled => "", :selected => "", :value => ""} Select a product
+							%option{"ng-repeat" => "product in products", :value => "{{product.id}}"} {{product.name}}
+						%input.btn.btn-default{:type => "submit", :value => "+"}
+					.padtop25
+						%table.table.table-responsive
+							%thead
+								%td Order ID
+								%td Total
+								%td Product
+								%td Actions
+							%tr{"ng-repeat" => "order in orders | orderBy:'-id':reverse" }
+								%td
+									{{order.id}}
+								%td
+									%strong {{ order.total | currency }}
+								%td
+									{{order.product.name}}
+									%small{"ng-show" => "order.user_id"}
+										%br
+										{{order.user.email}}
+								%td
+									%button.btn.btn-default.btn-sm{"ng-click" => "deleteOrder(order)"}
+										%span.glyphicon.glyphicon-trash{"aria-hidden" => "true"}
+
