@@ -14,5 +14,5 @@
 				-elsif @products.empty?
 					.col-sm-8.col-sm-offset-2.padbottommore
 						%h3 There are currently no products available in this store. Please check back later to get a bargain!
-
-			= link_to 'New Product', new_product_path, {:class => "btn btn-default btn-lg"}
+			- if user_signed_in?
+				= link_to 'New Product', new_product_path, {:class => "btn btn-default btn-lg"}

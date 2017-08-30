@@ -12,5 +12,6 @@
     %em Available in #{product.colour}
   %p.padbottom
     = link_to 'Show', product, {:class => "btn btn-default btn-sm"}
-    = link_to 'Edit', edit_product_path(product), {:class => "btn btn-default btn-sm"}
-    = link_to 'Destroy', product, :class => "btn btn-default btn-sm", :method => :delete, :data => { :confirm => 'Are you sure?' }
+    - if user_signed_in?
+      = link_to 'Edit', edit_product_path(product), {:class => "btn btn-default btn-sm"}
+      = link_to 'Destroy', product, :class => "btn btn-default btn-sm", :method => :delete, :data => { :confirm => 'Are you sure?' }
